@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0ea5e9">
+  <title>BMI Calculator | Calculate</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="canonical" href="https://smartbmicalculator.vercel.app/calculator">
+  <meta name="description" content="Calculate your BMI quickly and easily. Check your body mass index and understand your BMI range.">
+  <meta property="og:site_name" content="BMI Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BMI Calculator">
+  <meta property="og:description" content="Calculate your BMI quickly and easily. Check your body mass index and understand your BMI range.">
+  <meta property="og:url" content="https://smartbmicalculator.vercel.app/calculator">
+  <meta property="og:image" content="https://smartbmicalculator.vercel.app/share-image.jpg?v=2">
+  <meta property="og:image:secure_url" content="https://smartbmicalculator.vercel.app/share-image.jpg?v=2">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BMI Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BMI Calculator">
+  <meta name="twitter:description" content="Calculate your BMI quickly and easily. Check your body mass index and understand your BMI range.">
+  <meta name="twitter:image" content="https://smartbmicalculator.vercel.app/share-image.jpg?v=2">
+
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-card calculator-page">
+      <button class="back-btn" onclick="location.href='/'" aria-label="Back to home">←</button>
+
+      <h1 class="page-title">Calculate Your BMI</h1>
+
+      <div class="gender-grid">
+        <button class="gender-card selected" data-gender="Male" type="button">
+          <img src="assets/Male.png" alt="Male Image">
+          <span>Male</span>
+        </button>
+
+        <button class="gender-card" data-gender="Female" type="button">
+          <img src="assets/Female.png" alt="Female Image">
+          <span>Female</span>
+        </button>
+      </div>
+
+      <form id="bmiForm" autocomplete="off" novalidate>
+        <label for="age">Age <span class="optional">(optional)</span></label>
+        <input id="age" autocomplete="off" type="number" inputmode="numeric" min="1" max="120" placeholder="Enter your age (optional)">
+
+        <label for="weight">Weight</label>
+        <div class="input-row">
+          <input id="weight" autocomplete="off" type="number" inputmode="decimal" min="1" step="0.1" placeholder="Enter your weight" required>
+          <select id="weightUnit" aria-label="Weight unit">
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="oz">Ounce (oz)</option>
+            <option value="st">Stone (st)</option>
+        </select>
+        </div>
+
+        <label for="height">Height</label>
+        <div class="input-row">
+          <input id="height" autocomplete="off" type="number" inputmode="decimal" min="1" step="0.1" placeholder="Enter your height" required>
+          <select id="heightUnit" aria-label="Height unit">
+            <option value="cm">Centimeter (cm)</option>
+            <option value="m">Meter (m)</option>
+            <option value="mm">Millimeter (mm)</option>
+            <option value="in">Inch (in)</option>
+            <option value="ft">Foot (ft)</option>
+            <option value="yd">Yard (yd)</option>
+        </select>
+        </div>
+
+        <p id="formError" class="form-error"></p>
+        <button class="primary-btn calculate-btn" type="submit">CALCULATE YOUR BMI</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
